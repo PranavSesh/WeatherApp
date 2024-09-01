@@ -181,7 +181,6 @@ class DisplayPage:
 
 
 def get_weather(city):
-    api_key = '23bac0d141867e8cd3a782db608baf01'
     geo_url = f'http://api.openweathermap.org/geo/1.0/direct?q={city},AUSTRALIA&appid={api_key}'
     geo_response = requests.get(geo_url)
     lat = str(geo_response.json()[0]['lat'])
@@ -191,6 +190,7 @@ def get_weather(city):
 
 
 if __name__ == '__main__':
+    from api_key import api_key
     root = tk.Tk()
     EntryScreen(root)
     root.mainloop()
